@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Amazing book collections</h1>
-<h1>This is a test2 version</h1>
+
 
 <table>
   <thead>
@@ -23,8 +23,8 @@
 		<td><%= book.price %></td>
 		<td><%= book.published_date %></td>
         <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_book_path(book), data: {confirm: 'Are you sure you want to edit this book?'} %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure you want to destroy this book?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<%= link_to 'New Book', new_book_path, data: {confirm: 'Are you sure you want to make a new book?'} %>
